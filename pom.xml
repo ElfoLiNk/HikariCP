@@ -4,17 +4,17 @@
 
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <sureFireOptions11 />
+      <sureFireOptions11/>
       <sureFireForks11>false</sureFireForks11>
       <java11.sourceDirectory>${project.basedir}/src/main/java11</java11.sourceDirectory>
       <java11.build.outputDirectory>${project.build.directory}/classes-java11</java11.build.outputDirectory>
-      <artifact.classifier />
+      <artifact.classifier/>
 
       <docker.maven.plugin.fabric8.version>0.33.0</docker.maven.plugin.fabric8.version>
       <felix.bundle.plugin.version>5.1.1</felix.bundle.plugin.version>
       <felix.version>6.0.1</felix.version>
       <hibernate.version>5.4.16.Final</hibernate.version>
-      <javassist.version>3.24.1-GA</javassist.version>
+      <javassist.version>3.28.0-GA</javassist.version>
       <jndi.version>0.11.4.1</jndi.version>
       <maven.release.version>2.5.3</maven.release.version>
       <metrics.version>3.2.4</metrics.version>
@@ -623,14 +623,14 @@
                         </goals>
                         <configuration>
                            <target>
-                              <mkdir dir="${java11.build.outputDirectory}" />
+                              <mkdir dir="${java11.build.outputDirectory}"/>
                               <copy todir="${java11.build.outputDirectory}">
-                                 <fileset dir="${project.build.outputDirectory}" />
+                                 <fileset dir="${project.build.outputDirectory}"/>
                               </copy>
-                              <property name="classpath" value="${org.hdrhistogram:HdrHistogram:jar}: ${org.latencyutils:LatencyUtils:jar}:${org.hibernate.javax.persistence:hibernate-jpa:jar}: ${org.hibernate.common:hibernate-commons-annotations:jar}:${antlr:antlr:jar}: ${org.jboss:jandex:jar}:${com.fasterxml:classmate:jar}:${dom4j:dom4j:jar}" />
+                              <property name="classpath" value="${org.hdrhistogram:HdrHistogram:jar}: ${org.latencyutils:LatencyUtils:jar}:${org.hibernate.javax.persistence:hibernate-jpa:jar}: ${org.hibernate.common:hibernate-commons-annotations:jar}:${antlr:antlr:jar}: ${org.jboss:jandex:jar}:${com.fasterxml:classmate:jar}:${dom4j:dom4j:jar}"/>
                               "
-                              <property name="modulepath" value="${org.slf4j:slf4j-api:jar}: ${org.javassist:javassist:jar}:${io.micrometer:micrometer-core:jar}: ${org.hibernate:hibernate-core:jar}:${io.dropwizard.metrics:metrics-core:jar}: ${io.dropwizard.metrics:metrics-healthchecks:jar}:${io.prometheus:simpleclient:jar}" />
-                              <javac srcdir="${java11.sourceDirectory}" destdir="${java11.build.outputDirectory}" classpath="${classpath}" modulepath="${modulepath}" includeantruntime="false" />
+                              <property name="modulepath" value="${org.slf4j:slf4j-api:jar}: ${org.javassist:javassist:jar}:${io.micrometer:micrometer-core:jar}: ${org.hibernate:hibernate-core:jar}:${io.dropwizard.metrics:metrics-core:jar}: ${io.dropwizard.metrics:metrics-healthchecks:jar}:${io.prometheus:simpleclient:jar}"/>
+                              <javac srcdir="${java11.sourceDirectory}" destdir="${java11.build.outputDirectory}" classpath="${classpath}" modulepath="${modulepath}" includeantruntime="false"/>
                            </target>
                         </configuration>
                      </execution>
